@@ -1,101 +1,81 @@
-import Image from "next/image";
+'use client'
+import Image from 'next/image'
+import Link from 'next/link'
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { useRouter } from 'next/navigation'
+import { useEffect, useState } from 'react'
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const router = useRouter();
+  const [animationType, setAnimationType] = useState<'fade' | 'slide'>('fade');
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  useEffect(() => {
+    // Check if we came from the writing page using sessionStorage
+    const navigationDirection = sessionStorage.getItem('navigationDirection');
+    if (navigationDirection === 'writing-to-home') {
+      setAnimationType('slide');
+      // Clear the flag
+      sessionStorage.removeItem('navigationDirection');
+    }
+  }, []);
+
+  const handleTabChange = (value: string) => {
+    if (value === 'writing') {
+      // Set navigation direction flag
+      sessionStorage.setItem('navigationDirection', 'home-to-writing');
+      router.push('/writing');
+    }
+  };
+
+  const getAnimationClass = (index: number) => {
+    if (animationType === 'slide') {
+      return `slide-in-left-delay-${index}`;
+    }
+    return `fade-in-delay-${index}`;
+  };
+
+  return (
+    <main className="pt-12">
+      <div className="flex flex-col lg:flex-row gap-8 items-start">
+        <div className="w-full lg:flex-1 ">
+          <Tabs defaultValue="home" className={`mb-4 ${animationType === 'slide' ? 'slide-in-left' : 'fade-in'}`} onValueChange={handleTabChange}>
+            <TabsList>
+              <TabsTrigger value="home">Home</TabsTrigger>
+              <TabsTrigger value="writing">Writing</TabsTrigger>
+            </TabsList>
+          </Tabs>
+          <div className="mb-8">
+            <h1 className={`text-[36px] md:text-[48px] leading-tight ${animationType === 'slide' ? 'slide-in-left' : 'fade-in'}`}>
+              Hi, I'm Chris
+            </h1>
+            <p className={`text-gray-500 text-base leading-relaxed ${getAnimationClass(1)}`}>
+              I am a student at Blue Valley High school learning about new 
+              opportunities and exploring new possibilities through hands-on 
+              experiences. Get to know more about me through my {" "}
+              <span className="text-black">writing</span>.
+            </p>
+            <p className={`text-gray-500 text-base leading-relaxed ${getAnimationClass(2)}`}>
+              This website is a place for me to share all my upcoming projects such as making this website; however, for now, the main content is my writing where I shared my thoughts, experiences, and thins that I learned or achieved that can't be wrapped up in to a title or a trophy.
+            </p>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <div className={`w-full lg:w-[400px] aspect-[3/4] rounded-lg overflow-hidden ${getAnimationClass(3)} self-start image-mask`} 
+             style={{overflow: 'hidden', position: 'relative'}}>
           <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+            src="/meOnTheLake.png"
+            alt="Picture of Chris on the lake"
+            width={400}
+            height={500}
+            className="object-cover w-full h-full" 
+            priority
+            style={{ 
+              position: 'absolute', 
+              top: '-100px',
+              filter: 'drop-shadow(0 0 20px rgba(255, 255, 255, 0.2))'
+            }}
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+        </div>
+      </div>
+    </main> 
   );
 }
