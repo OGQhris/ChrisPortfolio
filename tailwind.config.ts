@@ -15,7 +15,8 @@ const config: Config = {
   				'Helvetica',
   				'Arial',
   				'sans-serif'
-  			]
+  			],
+  			playfair: ['var(--font-playfair)']
   		},
   		colors: {
   			background: 'hsl(var(--background))',

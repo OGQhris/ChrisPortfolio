@@ -43,7 +43,7 @@ export default function Home() {
             </TabsList>
           </Tabs>
           <div className="flex flex-col gap-4 mb-8">
-            <h1 className={`text-[36px] md:text-[48px] leading-tight ${animationType === 'slide' ? 'slide-in-left' : 'fade-in'}`}>
+            <h1 className={`text-[36px] md:text-[48px] leading-tight ${animationType === 'slide' ? 'slide-in-left' : 'fade-in'} font-playfair`}>
               Hi, I&apos;m Chris
             </h1>
             <p className={`text-gray-500/60 text-base leading-relaxed ${getAnimationClass(1)}`}>
