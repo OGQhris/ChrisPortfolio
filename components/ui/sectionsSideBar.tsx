@@ -43,7 +43,7 @@ export default function SectionsSideBar({ headings }: SectionsSideBarProps) {
 
   return (
     <div className="w-full lg:w-64">
-      <div className="sticky top-6">
+      <div>
         <h3 className={`text-base font-semibold mb-4 text-black ${playfair.className}`}>Sections</h3>
         <nav className="group">
           {headings.map((heading) => (

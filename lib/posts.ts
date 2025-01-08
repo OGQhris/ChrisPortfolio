@@ -24,10 +24,14 @@ function extractHeadingsFromMarkdown(content: string) {
     if (match) {
       const level = match[1].length;
       const text = match[2].trim();
+      // Create a more reliable ID by removing all special characters and spaces
       const id = text.toLowerCase()
-        .replace(/[^a-z0-9\s-]/g, '')
-        .replace(/\s+/g, '-')
-        .replace(/-+/g, '-');
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')  // Remove diacritics
+        .replace(/[^a-z0-9\s-]/g, '')     // Remove special characters
+        .trim()
+        .replace(/\s+/g, '-')             // Replace spaces with hyphens
+        .replace(/-+/g, '-');             // Remove consecutive hyphens
       
       headings.push({ level, text, id });
     }
@@ -52,20 +56,14 @@ export async function getPostData(id: string): Promise<PostData> {
       sanitize: false,
       allowDangerousHtml: true 
     })
-    .process(matterResult.content
-      .replace(/\t/g, '&nbsp;&nbsp;&nbsp;&nbsp;')  // Convert tabs to spaces
-      .replace(/\n\n/g, '\n<span class="intentional-break"></span>\n') // Convert single blank line to one line height space
-      .replace(/^(#{1,6})\s+(.+)$/gm, (_, hashes, text) => {
-        // Add a special class to headings to control spacing
-        const level = hashes.length;
-        return `<h${level} class="md-heading">${text}</h${level}>`;
-      })
-    );
+    .process(matterResult.content);
 
   // Add IDs to the HTML headings
   let contentHtml = processedContent.toString();
   headings.forEach(heading => {
-    const headingRegex = new RegExp(`<h${heading.level} class="md-heading">(${heading.text})</h${heading.level}>`, 'i');
+    // Create a more specific regex that matches the exact heading text
+    const escapedText = heading.text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const headingRegex = new RegExp(`<h${heading.level}[^>]*>(${escapedText})</h${heading.level}>`, 'i');
     contentHtml = contentHtml.replace(
       headingRegex,
       `<h${heading.level} id="${heading.id}" class="md-heading">${heading.text}</h${heading.level}>`

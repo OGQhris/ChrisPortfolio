@@ -18,9 +18,14 @@ const Navbar = () => {
                 <nav>
                     <ul className="flex gap-8 text-lg">
                         <li className="cursor-pointer">
-                            <Link href="/resume" className="text-base font-helvetica opacity-50 hover:opacity-100 hover:underline transition-all">
+                            <a 
+                                href="/assets/resume.pdf" 
+                                target="_blank" 
+                                rel="noopener noreferrer" 
+                                className="text-base font-helvetica opacity-50 hover:opacity-100 hover:underline transition-all"
+                            >
                                 Resume
-                            </Link>
+                            </a>
                         </li>
                         <li className="cursor-pointer">
                             <Link href="/contact" className="text-base font-helvetica opacity-50 hover:opacity-100 hover:underline transition-all">

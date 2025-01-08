@@ -66,7 +66,11 @@ export default async function BlogPost({ params }: Props) {
               <div className="markdown-content" dangerouslySetInnerHTML={{ __html: postData.contentHtml || '' }} />
             </article>
           </div>
-          <SectionsSideBar headings={postData.headings || []} />
+          <div className="hidden lg:block">
+            <div className="sticky top-32" style={{ marginTop: '3.5rem' }}>
+              <SectionsSideBar headings={postData.headings || []} />
+            </div>
+          </div>
         </div>
       </div>
     </div>
