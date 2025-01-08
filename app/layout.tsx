@@ -12,6 +12,10 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   title: "Chris Marvel",
   description: "Personal portfolio of Chris Marvel",
+  icons: {
+    icon: '/logo.png',
+    apple: '/logo.png',
+  },
 };
 
 export default function RootLayout({
