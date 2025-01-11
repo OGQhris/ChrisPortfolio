@@ -28,12 +28,12 @@ export default function RootLayout({
       <body
         className={`${playfair.variable} font-helvetica antialiased min-h-screen flex flex-col`}
       >
-        <div className="w-[95%] md:w-full md:max-w-[800px] mx-auto px-4 md:px-0">
+        <div className="w-[95%] md:w-full md:max-w-[800px] mx-auto px-4 md:px-0 ">
           <div className="w-full mx-auto">
             <Navbar />
             {children}
           </div>
-          <div className="w-full mb-16 mx-auto">
+          <div className="w-full mb-8 mx-auto mt-8">
             <Footer />
           </div>
         </div>
