@@ -44,19 +44,19 @@ export function SubscriptionBar() {
 
   return (
     <div className="my-6 w-full">
-      <div className="flex flex-col sm:flex-row items-end justify-between gap-2">
-        <div className="flex flex-col items-start gap-1">
+      <div className="flex flex-col items-start sm:items-end sm:flex-row justify-between gap-2">
+        <div className="flex flex-col justify-start gap-1">
           <h3 className={`text-lg ${playfair.className}`}>Subscribe to My Blog</h3>
           <p className="text-sm text-gray-500">Get notified when I publish new posts</p>
         </div>
-        <form onSubmit={handleSubmit} className="flex items-center gap-2">
+        <form onSubmit={handleSubmit} className="flex items-center gap-2 w-full sm:w-auto">
           <input
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Enter your email"
             required
-            className="px-3 py-2 border md:min-w-[250px] border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent text-sm"
+            className="px-3 py-2 border flex-1 sm:flex-none md:min-w-[250px] border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent text-sm"
           />
           <button
             type="submit"
