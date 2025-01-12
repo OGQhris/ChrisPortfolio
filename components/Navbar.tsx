@@ -76,7 +76,7 @@ const Navbar = () => {
                         }`}
                     >
                         <div className="flex flex-col h-full p-6">
-                            <div className="flex justify-end pt-40 pr-4">
+                            <div className="flex justify-end pt-96 pr-4">
                                 <button 
                                     onClick={() => setIsMenuOpen(false)}
                                     className="p-2 hover:opacity-70 transition-opacity"
