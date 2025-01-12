@@ -18,8 +18,7 @@ export default async function Writing() {
             <div className="slide-in-right">
               <h1 className={`text-2xl font-bold mb-4 ${playfair.className}`}>My Entries</h1>
               <p className="text-gray-500 text-base opacity-100">
-                I just write about my experiences and my thoughts throughout these posts. 
-                I describe the context and experience and I derive key things that I learned from them.
+                Here, I write about my thoughts and experiences on a wide range of topics. 
               </p>
             </div>
 
