@@ -75,8 +75,8 @@ const Navbar = () => {
                             isMenuOpen ? 'translate-x-0' : 'translate-x-full'
                         }`}
                     >
-                        <div className="flex flex-col h-full p-6">
-                            <div className="flex justify-end pt-96 pr-4">
+                        <div className="flex flex-col h-full">
+                            <div className="flex justify-end p-4 pt-96">
                                 <button 
                                     onClick={() => setIsMenuOpen(false)}
                                     className="p-2 hover:opacity-70 transition-opacity"
@@ -95,46 +95,48 @@ const Navbar = () => {
                                     </svg>
                                 </button>
                             </div>
-                            <ul className="flex flex-col items-end justify-center flex-1 space-y-10 text-2xl pt-20 pr-8">
-                                <li>
-                                    <Link 
-                                        href="/" 
-                                        className="font-helvetica opacity-50 hover:opacity-100 hover:underline transition-all block"
-                                        onClick={() => setIsMenuOpen(false)}
-                                    >
-                                        Home
-                                    </Link>
-                                </li>
-                                <li>
-                                    <a 
-                                        href="/assets/resume.pdf" 
-                                        target="_blank" 
-                                        rel="noopener noreferrer" 
-                                        className="font-helvetica opacity-50 hover:opacity-100 hover:underline transition-all block"
-                                        onClick={() => setIsMenuOpen(false)}
-                                    >
-                                        Resume
-                                    </a>
-                                </li>
-                                <li>
-                                    <Link 
-                                        href="/contact" 
-                                        className="font-helvetica opacity-50 hover:opacity-100 hover:underline transition-all block"
-                                        onClick={() => setIsMenuOpen(false)}
-                                    >
-                                        Contact
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link 
-                                        href="/writing" 
-                                        className="font-helvetica opacity-50 hover:opacity-100 hover:underline transition-all block"
-                                        onClick={() => setIsMenuOpen(false)}
-                                    >
-                                        Writing
-                                    </Link>
-                                </li>
-                            </ul>
+                            <div className="flex flex-col items-end justify-center flex-1 px-8">
+                                <ul className="flex flex-col items-end space-y-10 text-2xl">
+                                    <li>
+                                        <Link 
+                                            href="/" 
+                                            className="font-helvetica opacity-50 hover:opacity-100 hover:underline transition-all block"
+                                            onClick={() => setIsMenuOpen(false)}
+                                        >
+                                            Home
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <a 
+                                            href="/assets/resume.pdf" 
+                                            target="_blank" 
+                                            rel="noopener noreferrer" 
+                                            className="font-helvetica opacity-50 hover:opacity-100 hover:underline transition-all block"
+                                            onClick={() => setIsMenuOpen(false)}
+                                        >
+                                            Resume
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <Link 
+                                            href="/contact" 
+                                            className="font-helvetica opacity-50 hover:opacity-100 hover:underline transition-all block"
+                                            onClick={() => setIsMenuOpen(false)}
+                                        >
+                                            Contact
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link 
+                                            href="/writing" 
+                                            className="font-helvetica opacity-50 hover:opacity-100 hover:underline transition-all block"
+                                            onClick={() => setIsMenuOpen(false)}
+                                        >
+                                            Writing
+                                        </Link>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
