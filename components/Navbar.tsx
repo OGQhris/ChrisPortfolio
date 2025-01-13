@@ -88,30 +88,30 @@ const Navbar = () => {
                         }`}
                     >
                         <div className="flex flex-col h-full">
-                            <div className="flex justify-end p-4 pt-96">
-                                <button 
-                                    onClick={(e) => {
-                                        e.stopPropagation();
-                                        setIsMenuOpen(false);
-                                    }}
-                                    className="p-2 hover:opacity-70 transition-opacity z-50"
-                                    aria-label="Close menu"
-                                >
-                                    <svg 
-                                        className="w-8 h-8" 
-                                        fill="none" 
-                                        strokeLinecap="round" 
-                                        strokeLinejoin="round" 
-                                        strokeWidth="2" 
-                                        viewBox="0 0 24 24" 
-                                        stroke="currentColor"
-                                    >
-                                        <path d="M6 18L18 6M6 6l12 12" />
-                                    </svg>
-                                </button>
-                            </div>
-                            <div className="flex flex-col items-end justify-center flex-1 px-8 -mt-40">
+                            <div className="flex flex-col items-end justify-center flex-1 px-8 py-12">
                                 <ul className="flex flex-col items-end space-y-10 text-2xl">
+                                    <li>
+                                        <button 
+                                            onClick={(e) => {
+                                                e.stopPropagation();
+                                                setIsMenuOpen(false);
+                                            }}
+                                            className="font-helvetica opacity-100 hover:opacity-100 transition-all block"
+                                            aria-label="Close menu"
+                                        >
+                                            <svg 
+                                                className="w-8 h-8" 
+                                                fill="none" 
+                                                strokeLinecap="round" 
+                                                strokeLinejoin="round" 
+                                                strokeWidth="2" 
+                                                viewBox="0 0 24 24" 
+                                                stroke="currentColor"
+                                            >
+                                                <path d="M6 18L18 6M6 6l12 12" />
+                                            </svg>
+                                        </button>
+                                    </li>
                                     <li>
                                         <Link 
                                             href="/" 
