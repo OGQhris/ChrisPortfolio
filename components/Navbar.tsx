@@ -78,8 +78,11 @@ const Navbar = () => {
                         <div className="flex flex-col h-full">
                             <div className="flex justify-end p-4 pt-96">
                                 <button 
-                                    onClick={() => setIsMenuOpen(false)}
-                                    className="p-2 hover:opacity-70 transition-opacity"
+                                    onClick={(e) => {
+                                        e.stopPropagation();
+                                        setIsMenuOpen(false);
+                                    }}
+                                    className="p-2 hover:opacity-70 transition-opacity z-50"
                                     aria-label="Close menu"
                                 >
                                     <svg 
@@ -95,7 +98,7 @@ const Navbar = () => {
                                     </svg>
                                 </button>
                             </div>
-                            <div className="flex flex-col items-end justify-center flex-1 px-8">
+                            <div className="flex flex-col items-end justify-center flex-1 px-8 -mt-40">
                                 <ul className="flex flex-col items-end space-y-10 text-2xl">
                                     <li>
                                         <Link 
