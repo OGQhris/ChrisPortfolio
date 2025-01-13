@@ -1,10 +1,22 @@
 'use client'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    useEffect(() => {
+        if (isMenuOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'unset';
+        }
+
+        return () => {
+            document.body.style.overflow = 'unset';
+        };
+    }, [isMenuOpen]);
 
     return (
         <header className="py-8">
@@ -63,7 +75,7 @@ const Navbar = () => {
                 </button>
                 {/* Mobile Menu Overlay */}
                 <div 
-                    className={`fixed inset-0 bg-white z-50 md:hidden transition-opacity duration-500 ${
+                    className={`fixed inset-0 bg-white z-50 md:hidden transition-opacity duration-500 overflow-hidden ${
                         isMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
                     }`}
                     style={{
