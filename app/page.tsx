@@ -53,7 +53,7 @@ export default function Home() {
               <Link href="/writing" className="text-black hover:opacity-70 transition-opacity">writing</Link>.
             </p>
             <p className={`text-gray-500/60 text-base leading-relaxed ${getAnimationClass(2)}`}>
-              This website is a place for me to share all my upcoming projects such as making this website; however, for now, the main content is my writing where I share my thoughts, experiences, and stuff that I learned or achieved that can&apos;t be wrapped up in to a title or a trophy.
+              This website is a place for me to share my upcoming projects; however, for now, the main content is my writings page where I share my thoughts, experiences, and lessons I learned that can&apos;t be shown in a title or a award.
             </p>
           </div>
         </div>
