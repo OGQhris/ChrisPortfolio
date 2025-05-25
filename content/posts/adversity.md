@@ -27,7 +27,7 @@ This quote just happened to be brought to me in my AP Lang class right when I wa
 
 
 <br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Adversity is the first component and the catalyst to change and growth. I like to think of adversity as similar to the mechanism of evolution. A species adapts to its environment because of certain conditions that make certain traits of a species more favorable to its survival. Without the conditions that force the species to change, there wouldn’t be growth—just like without adversity, growth would not have happened within an individual.
+Adversity is the first component and the catalyst to change and growth. I like to think of adversity as similar to the mechanism of evolution. A species adapts to its environment because of certain conditions that make certain traits of a species more favorable to its survival. Without the conditions that force the species to change, there wouldn’t be growth—just like without adversity, growth would not have happened within an individual.
 <br/>
 
 
