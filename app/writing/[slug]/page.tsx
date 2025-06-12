@@ -25,15 +25,9 @@ export default async function BlogPost({ params }: Props) {
   const postData = await getPostData(slug);
   const allPosts = await getSortedPostsData();
   
-  // Sort posts by date in ascending order (oldest first)
+  // Sort posts by date in ascending order (oldest first) to get the correct index
   const sortedPosts = [...allPosts].sort((a, b) => {
-    const [aMonth, aDay, aYear] = a.date.replace(/"/g, '').split('/').map(Number);
-    const [bMonth, bDay, bYear] = b.date.replace(/"/g, '').split('/').map(Number);
-    
-    const dateA = new Date(2000 + aYear, aMonth - 1, aDay);
-    const dateB = new Date(2000 + bYear, bMonth - 1, bDay);
-    
-    return dateA.getTime() - dateB.getTime();
+    return new Date(a.date).getTime() - new Date(b.date).getTime();
   });
 
   const postIndex = sortedPosts.findIndex(post => post.id === slug) + 1;

@@ -1,7 +1,7 @@
 ---
 title: 'Who Am I?'
-date: '01/07/2025'
-description: 'Who I am, in a nutshell.'
+date: '12/25/2024'
+description: 'Me in a nutshell.'
 ---
 
 # Hello world
