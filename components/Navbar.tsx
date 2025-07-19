@@ -36,7 +36,7 @@ const Navbar = () => {
                     <ul className="flex gap-8 text-lg">
                         <li className="cursor-pointer">
                             <a 
-                                href="/assets/resume.pdf" 
+                                href="/pictures/resume.pdf" 
                                 target="_blank" 
                                 rel="noopener noreferrer" 
                                 className="text-base font-helvetica opacity-50 hover:opacity-100 hover:underline transition-all"
@@ -123,7 +123,7 @@ const Navbar = () => {
                                     </li>
                                     <li>
                                         <a 
-                                            href="/assets/resume.pdf" 
+                                            href="/pictures/resume.pdf" 
                                             target="_blank" 
                                             rel="noopener noreferrer" 
                                             className="font-helvetica opacity-50 hover:opacity-100 hover:underline transition-all block"
