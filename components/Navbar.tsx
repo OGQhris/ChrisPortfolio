@@ -23,7 +23,7 @@ const Navbar = () => {
             <div className="flex justify-between items-center">
                 <Link href="/">
                     <Image 
-                        src="/logo.png" 
+                        src="/pictures/logo.png" 
                         alt="Logo" 
                         className="h-18 w-auto hover:cursor-pointer md:w-[124px] w-[100px]"
                         width={124}

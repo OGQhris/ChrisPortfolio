@@ -60,7 +60,7 @@ export default function Home() {
         <div className={`w-full lg:w-[400px] aspect-[3/4] rounded-lg overflow-hidden ${getAnimationClass(3)} self-start image-mask`} 
              style={{overflow: 'hidden', position: 'relative'}}>
           <Image
-            src="/meOnTheLake.png"
+            src="/pictures/meOnTheLake.png"
             alt="Picture of Chris on the lake"
             width={400}
             height={500}
