@@ -43,4 +43,4 @@ The point of school isn’t just grades or diplomas—it’s about building the 
 
 In essence, I found that these three things were key to achieving my goals in school and something that I try to apply to everything I do: finding purpose, fixing my system, and shaping my identity. I look at it like growing a plant. If it’s not thriving, I don’t mess around with the leaves, I check the soil, the sunlight, and the water. The plant is only as healthy as the environment it’s rooted in. In the same way that outcomes are a reflection of the conditions I create for myself.
 
-When I found purpose in what I did, I shifted the way I viewed each task—it became meaningful. When I fixed my system, the results started showing in tests and in fluency. And when I focused on identity, I stopped trying to look like a hard worker and actually become one, and making it part of my identity reinforced my habitual system even more. Together, these things changed the way I engage with school, and in turn, they changed my results
+Now I am not saying that I am a perfect person who follow these principles down to the T, but it is something I strive for.
