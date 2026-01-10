@@ -2,6 +2,7 @@ import path from 'path';
 import matter from 'gray-matter';
 import { remark } from 'remark';
 import html from 'remark-html';
+import remarkGfm from 'remark-gfm';
 import { promises as fs } from 'fs';
 
 const postsDirectory = path.join(process.cwd(), 'content/posts');
@@ -52,9 +53,10 @@ export async function getPostData(id: string): Promise<PostData> {
 
   // Use remark to convert markdown into HTML string
   const processedContent = await remark()
-    .use(html, { 
+    .use(remarkGfm)
+    .use(html, {
       sanitize: false,
-      allowDangerousHtml: true 
+      allowDangerousHtml: true
     })
     .process(matterResult.content);
 
