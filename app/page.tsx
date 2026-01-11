@@ -47,9 +47,8 @@ export default function Home() {
               Hi, I&apos;m Chris
             </h1>
             <p className={`text-gray-500/60 text-base leading-relaxed ${getAnimationClass(1)}`}>
-              I am a student at Blue Valley High school learning about new 
-              opportunities and exploring new possibilities through hands-on 
-              experiences. Get to know more about me through my {" "}
+              I am a student at Blue Valley High school learning about new opportunities and exploring new possibilities.
+              Get to know more about me through my {" "}
               <Link href="/writing" className="text-black hover:opacity-70 transition-opacity">writing</Link>.
             </p>
             <p className={`text-gray-500/60 text-base leading-relaxed ${getAnimationClass(2)}`}>
