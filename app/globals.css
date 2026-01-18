@@ -97,7 +97,7 @@ body {
 
 .markdown-content h2.md-heading {
   font-family: var(--font-playfair);
-  font-size: 1.055rem;
+  font-size: 1rem;
   font-weight: 500;
   margin-bottom: 0.125rem;
   color: #0066cc;
