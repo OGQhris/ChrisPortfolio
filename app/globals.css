@@ -343,3 +343,16 @@ body {
     text-indent: 2em;
   }
 }
+
+.markdown-content ul,
+.markdown-content ol {
+  list-style: disc;
+  padding-left: 1.25rem;  /* indent for bullets */
+  margin-top: 0;          /* remove extra space above */
+  margin-bottom: 0;       /* remove extra space below */
+}
+
+.markdown-content li {
+  margin: 0;              /* no extra gap between bullets */
+  line-height: 1.4;       /* adjust to taste */
+}
